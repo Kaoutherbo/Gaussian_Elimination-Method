@@ -110,7 +110,3 @@ To use this program, run main_program.py. Follow the prompts to input coefficien
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-
-
-
