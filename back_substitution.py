@@ -1,11 +1,15 @@
 import numpy as np
 
-def back_substitution(matrix, vector_b):
-    mat_size = len(vector_b)
-    arr_sol = np.zeros(mat_size)
+def back_substitution(matrix, vector):
+    size = len(vector)
+    solution_vector = np.zeros(size)
 
-    for i in range(mat_size - 1, -1, -1):
-        S = np.dot(matrix[i, i+1:], arr_sol[i+1:])
-        arr_sol[i] = (vector_b[i] - S) / matrix[i, i]
+    for i in range(size - 1, -1, -1):
+        solution_vector[i] = vector[i]
 
-    return arr_sol
+        for j in range(i + 1, size):
+            solution_vector[i] -= matrix[i, j] * solution_vector[j]
+
+        solution_vector[i] /= matrix[i, i]
+
+    return solution_vector

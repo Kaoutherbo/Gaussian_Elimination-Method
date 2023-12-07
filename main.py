@@ -1,6 +1,5 @@
 from get_coeffs import get_coeffs
-from gaussian_elimination import gaussian_elimination
-from back_substitution import back_substitution
+from  triangularization import triangularization
 from display_solution import display_solution
 from calculate_determinant import calculate_determinant
 
@@ -13,12 +12,8 @@ def solve_linear_system():
     print(f"Determinant of the matrix is: {det:.2f}")
 
     if det != 0:
-        
-        # Perform Gaussian elimination
-        matrix_A, vector_B = gaussian_elimination(matrix_A, vector_B)
-
-        # Perform back-substitution
-        solution_vector = back_substitution(matrix_A, vector_B)
+        # Use triangularization instead of Gaussian elimination
+        solution_vector = triangularization(matrix_A, vector_B)
 
         # Display the solution
         display_solution(solution_vector, mat_size)
