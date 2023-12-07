@@ -7,17 +7,21 @@ from calculate_determinant import calculate_determinant
 def solve_linear_system():
     mat_size = int(input("Enter number of unknowns: "))
 
-    matrix = get_coeffs(mat_size)
+    matrix_A, vector_B = get_coeffs(mat_size)
 
-    determinant = calculate_determinant(matrix)
-    print(f"Determinant of the matrix is: {determinant:.2f}")
+    det = calculate_determinant(matrix_A)
+    print(f"Determinant of the matrix is: {det:.2f}")
 
-    if determinant != 0:
-        matrix = gaussian_elimination(matrix, mat_size)
+    if det != 0:
+        
+        # Perform Gaussian elimination
+        matrix_A, vector_B = gaussian_elimination(matrix_A, vector_B)
 
-        sol_arr = back_substitution(matrix, mat_size)
+        # Perform back-substitution
+        solution_vector = back_substitution(matrix_A, vector_B)
 
-        display_solution(sol_arr, mat_size)
+        # Display the solution
+        display_solution(solution_vector, mat_size)
     else:
         print("The determinant is zero. The system of equations may have no unique solution.")
 
