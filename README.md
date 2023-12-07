@@ -1,112 +1,69 @@
-# Linear System Solver
+# Gaussian Elimination for Linear Systems
 
 ## Overview
 
-This Python program solves a system of linear equations using the Gaussian elimination method. The program is organized into modular functions, each serving a specific purpose.
+This Python project provides functions for solving linear systems of equations using the Gaussian elimination method. The implementation includes functions for obtaining coefficients, calculating determinants, performing Gaussian elimination, back-substitution, and displaying solutions.
 
 ## Functions
 
-### 1. `input_functions.py`
+### 1. `get_coeffs`
 
-This module contains the function for inputting coefficients of the linear system.
+Prompt the user to enter the number of unknowns and populate a matrix with coefficients for a linear system.
 
-```python
-def input_coefficients(matrix_size):
-    """
-    Accepts user input for the coefficients of a linear system.
+### 2. `calculate_determinant`
 
-    Parameters:
-    - matrix_size (int): Number of unknowns in the system.
+Calculate the determinant of a square matrix using NumPy's `np.linalg.det` function.
 
-    Returns:
-    - matrix_input (numpy.ndarray): Coefficient matrix augmented with the right-hand side.
-    """
-    # Implementation details...
-2. gaussian_elimination.py
-This module performs Gaussian elimination on the coefficient matrix.
+### 3. `gaussian_elimination`
 
-python
-Copy code
-def gaussian_elimination(matrix_input, matrix_size):
-    """
-    Applies Gaussian elimination to the coefficient matrix.
+Perform Gaussian elimination on an augmented matrix to transform it into upper triangular form.
 
-    Parameters:
-    - matrix_input (numpy.ndarray): Coefficient matrix augmented with the right-hand side.
-    - matrix_size (int): Number of unknowns in the system.
+### 4. `back_substitution`
 
-    Returns:
-    - matrix_input (numpy.ndarray): Triangularized coefficient matrix.
-    """
-    # Implementation details...
-3. back_substitution.py
-This module performs back substitution to find the solution vector.
+Solve a linear system in upper triangular form using back-substitution.
 
-python
-Copy code
-def back_substitution(matrix_input, matrix_size):
-    """
-    Performs back substitution to find the solution vector.
+### 5. `triangularization`
 
-    Parameters:
-    - matrix_input (numpy.ndarray): Triangularized coefficient matrix.
-    - matrix_size (int): Number of unknowns in the system.
+Combine Gaussian elimination and back-substitution for efficient solution finding.
 
-    Returns:
-    - solution_vector (numpy.ndarray): Solution vector for the linear system.
-    """
-    # Implementation details...
-4. display_functions.py
-This module contains a function to display the solution vector.
+### 6. `display_solution`
 
-python
-Copy code
-def display_solution(solution_vector, matrix_size):
-    """
-    Displays the solution vector in a readable format.
+Print the solution vector in a readable format.
 
-    Parameters:
-    - solution_vector (numpy.ndarray): Solution vector for the linear system.
-    - matrix_size (int): Number of unknowns in the system.
+### 7. `solve_linear_system`
 
-    Returns:
-    - None
-    """
-    # Implementation details...
-5. determinant_function.py
-This module calculates the determinant of the coefficient matrix.
+Main entry point: obtain coefficients, calculate determinant, and solve the linear system using Gaussian elimination.
 
-python
-Copy code
-def calculate_determinant(matrix_input):
-    """
-    Calculates the determinant of the coefficient matrix.
+## Usage
 
-    Parameters:
-    - matrix_input (numpy.ndarray): Coefficient matrix augmented with the right-hand side.
+1. Clone the repository:
 
-    Returns:
-    - determinant (float): Determinant of the coefficient matrix.
-    """
-    # Implementation details...
-6. main_program.py
-The main program that orchestrates the functions.
+    ```bash
+    git clone https://github.com/your-username/gaussian-elimination.git
+    ```
 
-python
-Copy code
-def solve_linear_system():
-    """
-    Solves a system of linear equations using Gaussian elimination.
+2. Navigate to the project directory:
 
-    Parameters:
-    - None
+    ```bash
+    cd gaussian-elimination
+    ```
 
-    Returns:
-    - None
-    """
-    # Implementation details...
-Usage
-To use this program, run main_program.py. Follow the prompts to input coefficients and obtain the solution.
+3. Run the main script:
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+    ```bash
+    python main.py
+    ```
+
+Follow the on-screen instructions to input coefficients and obtain solutions.
+
+## Dependencies
+
+- NumPy: [Installation instructions](https://numpy.org/install/)
+
+## Contributing
+
+If you would like to contribute to this project, please follow the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
