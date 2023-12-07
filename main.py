@@ -13,10 +13,10 @@ def solve_linear_system():
 
     if det != 0:
         # Use  Gaussian elimination
-        solution_vector = gaussian_elimination(matrix_A, vector_B)
+        arr_sol = gaussian_elimination(matrix_A, vector_B)
 
         # Display the solution
-        display_solution(solution_vector, mat_size)
+        display_solution(arr_sol, mat_size)
     else:
         print("The determinant is zero. The system of equations may have no unique solution.")
 

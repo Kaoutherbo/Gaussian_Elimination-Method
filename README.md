@@ -39,13 +39,13 @@ Main entry point: obtain coefficients, calculate determinant, and solve the line
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/gaussian-elimination.git
+    git clone https://github.com/kautherBou/Gaussian-Elimination-Method.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd gaussian-elimination
+    cd Gaussian-Elimination-Method
     ```
 
 3. Run the main script:
