@@ -1,18 +1,15 @@
-import sys
 import numpy as np
+from back_substitution import back_substitution
+from triangularization import triangularization
 
+def  gaussian_elimination(matrix_A, vector_B):
+    # Combine matrix A and vector B into an augmented matrix
+    augmented_matrix = np.column_stack((matrix_A, vector_B))
 
-def gaussian_elimination(matrix, vector_b):
-    mat_size = len(vector_b)
+    # Call the Gaussian elimination function
+    modified_matrix, modified_vector = triangularization(augmented_matrix[:, :-1], augmented_matrix[:, -1])
 
-    for k in range(mat_size - 1):
-        for i in range(k + 1, mat_size):
-            w = matrix[i, k] / matrix[k, k]
-            for j in range(mat_size):
-                if j < k:
-                    matrix[i, j] = 0
-                else:
-                    matrix[i, j] -= w * matrix[k, j]
-            vector_b[i] -= w * vector_b[k]
+    # Perform back-substitution
+    solution_vector = back_substitution(modified_matrix, modified_vector)
 
-    return matrix, vector_b
+    return solution_vector
