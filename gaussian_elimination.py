@@ -6,7 +6,7 @@ def  gaussian_elimination(matrix_A, vector_B):
     # Combine matrix A and vector B into an matrix
     matrix = np.column_stack((matrix_A, vector_B))
 
-    # Call the Gaussian elimination function
+    # Call the triangularization function
     modified_matrix, modified_vector = triangularization(matrix[:, :-1], matrix[:, -1])
 
     # Perform back-substitution
