@@ -3,7 +3,7 @@ from  gaussian_elimination import gaussian_elimination
 from display_solution import display_solution
 from calculate_determinant import calculate_determinant
 from print_mat import print_matrix_system
-import numpy as np
+
 
 def solve_linear_system():
     mat_size = int(input("Enter the number of rows of matrix: "))
