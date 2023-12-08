@@ -39,7 +39,7 @@ Main entry point: obtain coefficients, calculate determinant, and solve the line
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/kautherBou/Gaussian-Elimination-Method.git
+    git clone https://github.com/Kaoutherbo/Gaussian_Elimination-Method.git
     ```
 
 2. Navigate to the project directory:
