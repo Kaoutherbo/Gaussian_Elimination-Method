@@ -4,7 +4,7 @@ from triangularization import triangularization
 
 def  gaussian_elimination(matrix_A, vector_B):
     # Combine matrix A and vector B into an matrix
-    matrix = np.column_stack((matrix_A, vector_B))
+    matrix = np.column_stack((matrix_A, vector_B)) # we can remove it 
 
     # Call the triangularization function
     modified_matrix, modified_vector = triangularization(matrix[:, :-1], matrix[:, -1])

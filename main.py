@@ -3,6 +3,7 @@ from  gaussian_elimination import gaussian_elimination
 from display_solution import display_solution
 from calculate_determinant import calculate_determinant
 from print_mat import print_matrix_system
+from calculate_eigenvalues_eigenvectors import calculate_eigenpairs
 
 
 def solve_linear_system():
@@ -22,6 +23,16 @@ def solve_linear_system():
 
         # Display the solution
         display_solution(arr_sol, mat_size)
+        
+        # Call the triangularization function
+        modified_matrix, modified_vector = triangularization(matrix_A.copy(), vector_B.copy())
+
+        # Calculate and display eigenvalues and eigenvectors
+        eigenvalues, eigenvectors = calculate_eigenpairs(matrix_A)
+        print("Eigenvalues of this matrix are:", eigenvalues)
+        print("Eigenvectors of this matrix are:", eigenvectors)
+
+    
     else:
         print("The determinant is zero. The system of equations may have no unique solution.")
 
