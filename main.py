@@ -24,13 +24,10 @@ def solve_linear_system():
         # Display the solution
         display_solution(arr_sol, mat_size)
         
-        # Call the triangularization function
-        modified_matrix, modified_vector = triangularization(matrix_A.copy(), vector_B.copy())
-
         # Calculate and display eigenvalues and eigenvectors
         eigenvalues, eigenvectors = calculate_eigenpairs(matrix_A)
-        print("Eigenvalues of this matrix are:", eigenvalues)
-        print("Eigenvectors of this matrix are:", eigenvectors)
+        print("\nEigenvalues of this matrix are:", eigenvalues)
+        print("\nEigenvectors of this matrix are:", eigenvectors)
 
     
     else:
