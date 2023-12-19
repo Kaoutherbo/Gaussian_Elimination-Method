@@ -4,7 +4,7 @@ from display_solution import display_solution
 from calculate_determinant import calculate_determinant
 from print_mat import print_matrix_system
 from calculate_eigenvalues_eigenvectors import calculate_eigenpairs
-
+from display_solution import display_eigenvalues_eigenvecors
 
 def solve_linear_system():
     mat_size = int(input("Enter the number of rows of matrix: "))
@@ -26,9 +26,9 @@ def solve_linear_system():
         
         # Calculate and display eigenvalues and eigenvectors
         eigenvalues, eigenvectors = calculate_eigenpairs(matrix_A)
-        print("\nEigenvalues of this matrix are:", eigenvalues)
-        print("\nEigenvectors of this matrix are:", eigenvectors)
-
+        # print("\nEigenvalues of this matrix are:", eigenvalues)
+        # print("\nEigenvectors of this matrix are:", eigenvectors)
+        display_eigenvalues_eigenvecors(eigenvalues, eigenvectors)
     
     else:
         print("The determinant is zero. The system of equations may have no unique solution.")
